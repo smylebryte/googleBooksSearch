@@ -2,21 +2,22 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
-function BookCard(props) {
+function bookCard(props) {
   return (
     <>
-      {props.result.map((book) => {
-        <Card style={{ width: "18rem" }}>
-          <Card.Img variant="left" alt={book.image} src={book.image} />
-          <Card.Body>
-            <Card.Title>{book.title}</Card.Title>
-            <Card.Text>{book.description}</Card.Text>
-            <Button variant="primary">{book.link}</Button>
-          </Card.Body>
-        </Card>;
-      })}
+      <Card style={{ width: "18rem" }}>
+        <Card.Img variant="left" alt={props.alt} src={props.image} />
+        <Card.Body>
+          <Card.Title>{props.title}</Card.Title>
+          <Card.Text>{props.description}</Card.Text>
+          <Button href={props.link} target="_blank" variant="primary">
+            {props.cat}
+          </Button>
+          <Button data-id={props.id}>{props.name}</Button>
+        </Card.Body>
+      </Card>
     </>
   );
 }
 
-export default BookCard;
+export default bookCard;

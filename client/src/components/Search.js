@@ -13,7 +13,11 @@ function SearchBar(props) {
         placeholder="Search"
         className="mr-sm-2"
       />
-      <Button variant="outline-success" onClick={props.submit}>
+      <Button
+        variant="outline-success"
+        className="mr-sm-2"
+        onClick={props.submit}
+      >
         Search
       </Button>
     </Form>

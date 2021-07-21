@@ -2,13 +2,18 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const transactionSchema = new Schema({
+const bookSchema = new Schema({
+  book_id: {
+    type: String,
+  },
   title: {
     type: String,
   },
-  authors: {
-    type: String,
-  },
+  authors: [
+    {
+      type: String,
+    },
+  ],
   description: {
     type: String,
   },
@@ -20,6 +25,6 @@ const transactionSchema = new Schema({
   },
 });
 
-const Transaction = mongoose.model("Transaction", transactionSchema);
+const Book = mongoose.model("Book", bookSchema);
 
-module.exports = Transaction;
+module.exports = Book;
